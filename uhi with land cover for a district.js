@@ -1,6 +1,6 @@
 // Load Sylhet Level-2 boundary
-var table = ee.FeatureCollection("FAO/GAUL/2015/level2");
-var roi = table.filter(ee.Filter.eq('ADM2_NAME', 'Dhaka'))
+var table = ee.FeatureCollection("FAO/GAUL/2015/level1");
+var roi = table.filter(ee.Filter.eq('ADM1_NAME', 'Sylhet'))
                .map(function(f){ return f.simplify(1000); });
 
 Map.centerObject(roi, 10);
